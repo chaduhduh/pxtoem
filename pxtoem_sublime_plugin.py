@@ -1,8 +1,14 @@
 """  PxToEM Sublime Plugin Class  """
 
-import sublime, sublime_plugin
-from PxToEm.pxtoem import pxtoem
+import sublime_plugin
+import sys
 
+if sys.version_info[0] > 2:    
+    from PxToEm.pxtoem import pxtoem  # sublime 3
+else:
+    from pxtoem import pxtoem  # sublime 2
+
+    
 class PxToEmCommand(sublime_plugin.TextCommand):
     PXEM = pxtoem.pxtoem()
     _basePixel = 16

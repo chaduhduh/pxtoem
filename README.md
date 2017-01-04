@@ -7,9 +7,8 @@ Extensible Sublime package for converting between px and em values with ease.
 <code>18px <----> 1.125rem </code><br />
 
 # Installation
-1. Open Package Control in sublime text by pressing <code>ctrl+shift+p</code>. (or install package control)
-2. Type Command: <code>Package Control: add repository</code>
-3. Add this repos url and install is complete
+1. Open Sublime and choose <code>preferences->browse packages</code>
+2. Make a new plugin folder called PxToEm and clone this repo there.
 
 # usage
 1. Select text to convert ie. <code>16px 20em</code>

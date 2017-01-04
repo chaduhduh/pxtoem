@@ -1,5 +1,4 @@
 # Px To Em
-Extensible Sublime package for converting between px and em values with ease. 
 
 1. Select a value in px form or em
 2. Use hot key to toggle between the formats<br />

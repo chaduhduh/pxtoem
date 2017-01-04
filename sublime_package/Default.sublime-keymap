@@ -1,3 +1,3 @@
 [
-    { "keys": ["ctrl+shift+e+p"], "command": "px_to_em", "args": {}}
+    { "keys": ["ctrl+shift+e+up"], "command": "px_to_em", "args": {}}
 ]

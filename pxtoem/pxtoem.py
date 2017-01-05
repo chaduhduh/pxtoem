@@ -16,7 +16,7 @@ class pxtoem(object):
     def pxEm(self, base, value):
         # Formula: size in pixels / parent size in pixels
         value = value[0:(len(value)-2)]   # assuming px at end
-        return str(float(value)/float(base)) + "rem"
+        return str(float(value)/float(base)) + "em"
 
     def emPx(self, base, value):
         # Formula: size in EMs * parent size in pixels

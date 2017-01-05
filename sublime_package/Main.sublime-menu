@@ -1,0 +1,29 @@
+[
+    {
+        "caption": "Preferences",
+        "mnemonic": "n",
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "PxToEm",
+                        "children":
+                        [
+                            {
+                                "command": "open_file",
+                                "args": {"file": "${packages}/PxToEm/sublime_package/settings.sublime-settings"},
+                                "caption": "Package Settings – Default"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,5 +1,6 @@
 """  PxToEM Sublime Plugin Class  """
 
+import sublime
 import sublime_plugin
 import sys
 
@@ -10,8 +11,14 @@ else:
 
     
 class PxToEmCommand(sublime_plugin.TextCommand):
-    PXEM = pxtoem.pxtoem()
-    _basePixel = 16
+    
+    def init(self):
+        self._basePixel = self.getBasePixel()
+        self.PXEM = pxtoem.pxtoem()
+
+    def getBasePixel(self):
+        settings = sublime.load_settings("settings.sublime-settings")
+        return settings.get("basePixel")
 
     def clearClipboard(self):
         sublime.set_clipboard(' ')
@@ -29,6 +36,7 @@ class PxToEmCommand(sublime_plugin.TextCommand):
         return self.view
 
     def run(self, edit):
+        self.init()
         view = self.getView()
         for region in view.sel():
             if region.empty():

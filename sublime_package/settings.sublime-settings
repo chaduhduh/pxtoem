@@ -1,3 +1,4 @@
 {
-	"basePixel" : 16
+    "basePixel" : 16,
+    "useRem" : false
 }

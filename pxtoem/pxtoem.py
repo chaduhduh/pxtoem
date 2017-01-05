@@ -2,10 +2,22 @@
 
 
 class pxtoem(object):
+    def __init__(self, args):
+        # settings
+        self._useRem = args['useRem'] or False
+        self.setDefaultBasePixel(args['defaultBasePixel'])
+
+    def setDefaultBasePixel(self, value):
+        self._defaultBasePixel = value or 16
+
+    def getDefaultBasePixel(self):
+        return self._defaultBasePixel;
 
     def convertPx(self, value, basePixel):
         type = self.getType(value)
-        return self.getConversion(type, value, basePixel);
+        if basePixel is None:
+            basePixel = self.getDefaultBasePixel()
+        return self.getConversion(type, value, basePixel)
 
     def getConversion(self, type, value, basePixel):
         if type is "px":
@@ -15,8 +27,11 @@ class pxtoem(object):
 
     def pxEm(self, base, value):
         # Formula: size in pixels / parent size in pixels
+        appendStr = "em"
+        if self._useRem:
+            appendStr = "rem"
         value = value[0:(len(value)-2)]   # assuming px at end
-        return str(float(value)/float(base)) + "em"
+        return str(float(value)/float(base)) + appendStr
 
     def emPx(self, base, value):
         # Formula: size in EMs * parent size in pixels

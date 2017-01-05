@@ -39,7 +39,7 @@ class pxtoem(object):
             rtnValue = value[0:(len(value)-3)]  # assuming rem at end
         else:
             rtnValue = value[0:(len(value)-2)]  # assuming em at end
-        return str(float(rtnValue) * float(base)) + "px"
+        return ('%g' % (float(rtnValue) * float(base))) + "px"
 
     def getType(self, value):
         if 'px' in value:
